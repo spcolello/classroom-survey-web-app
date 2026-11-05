@@ -4,6 +4,8 @@ A full-stack classroom survey app built with React, TypeScript, Vite, Tailwind C
 
 **Live app:** https://classroom-survey-web-app.pages.dev/
 
+**Public instructor demo:** https://classroom-survey-public-demo.pages.dev/ — choose “Enter public demo.” This is a separate Supabase project with shared, disposable demo data. Do not enter personal information. No instructor password is required.
+
 **Public sample survey:** https://classroom-survey-web-app.pages.dev/s/f8c3eb55f56d4dde9782f6a348bd6a97
 
 **Submission links and instructor testing:** [SUBMISSION.md](SUBMISSION.md)
@@ -56,6 +58,12 @@ The React frontend runs as static files. Supabase Auth signs in the instructor. 
 3. Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` as **build environment variables** in Pages. Redeploy after saving them. These values are embedded in the static bundle, so use only the public key.
 4. In Supabase **Authentication → URL Configuration**, set the Site URL to your Pages URL. Password sign-in does not require a redirect, but this keeps the project configured for production.
 5. Verify production login, create and activate a survey, open the QR link on a phone or in another browser, submit, refresh results, and export CSV.
+
+### Public instructor demo
+
+The public demo uses a second Cloudflare Pages project and a second Supabase project, so visitors cannot access the owner's surveys or student responses. To reproduce it, run the main migration in an empty **demo-only** Supabase project, then run [the demo policy](supabase/demo/202611050002_public_demo.sql) there. Enable **Authentication → Sign In / Providers → Allow anonymous sign-ins** in that demo project. Set its Pages build variables to its own `VITE_SUPABASE_URL`, its publishable `VITE_SUPABASE_ANON_KEY`, and `VITE_PUBLIC_DEMO=true`. Use `npm run build` and `dist`. Never apply the demo policy to the owner's database.
+
+Supabase anonymous Auth users receive the authenticated database role. The demo-only policy recognizes their `is_anonymous` JWT claim and grants instructor tools in the demo project. Anyone can alter shared demo surveys and see shared demo results, so use only disposable examples. Students can still submit without an Auth session through `/s/:slug`; test that flow in a private browser window or on a phone. The production build uses `VITE_PUBLIC_DEMO=false` and retains its instructor allowlist.
 
 ## Security and design decisions
 

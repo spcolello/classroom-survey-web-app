@@ -34,6 +34,9 @@ This replaces the supplied TODO's unverified checkmarks. The original is preserv
 - [x] Export the results CSV and inspect its header and response row.
 - [x] Inspect desktop pages and complete the student flow on a phone.
 - [x] Capture the required Supabase and application evidence screenshots without passwords, project keys, or anonymous tokens.
+- [x] Deploy a separate public instructor demo with its own Supabase project and demo-only anonymous Auth policy.
+- [x] Verify one-click demo instructor access, survey creation and activation, unauthenticated student submission, duplicate protection, and persisted results.
+- [x] Link the demo from the production landing and login pages while keeping the original instructor login private.
 
 Keyboard-only navigation and opening the exported CSV in a separate spreadsheet application were not tested.
 
