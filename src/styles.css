@@ -58,6 +58,9 @@ img{max-width:100%}
 .login-form label{font-size:14px;font-weight:600;margin-bottom:7px}
 .login-form input{height:46px;margin-bottom:19px;border:1px solid #cdd8ce;border-radius:8px;background:white;padding:0 13px}
 .login-form .button{margin-top:9px}
+.demo-link{font-size:14px!important;line-height:1.5!important;margin:18px 0 0!important;color:#536258}
+.demo-link a{color:#145c38;text-decoration:underline;text-underline-offset:3px}
+.demo-notice{border:1px solid #d7ded6;border-radius:8px;background:#f4f7f1;color:#3d4e43;padding:12px 16px;margin-bottom:26px;font-size:14px;line-height:1.5}
 
 /* Instructor shell */
 .app-shell{min-height:100vh;display:grid;grid-template-columns:230px 1fr}
