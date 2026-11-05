@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ClipboardList, QrCode, ChartNoAxesColumn } from 'lucide-react'
+import { ResetPasswordPage } from './ResetPasswordPage'
 
 export function HomePage() {
+  if (window.location.hash.includes('type=recovery')) return <ResetPasswordPage />
   return <div className="landing">
     <header className="landing-header"><span className="brand brand-dark"><span className="brand-mark"><ClipboardList size={21} /></span><span>Classroom Survey</span></span><Link className="text-link" to="/login">Instructor sign in <ArrowRight size={17} /></Link></header>
     <main className="landing-main">

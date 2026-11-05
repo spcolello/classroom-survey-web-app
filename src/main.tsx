@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from './auth/AuthProvider'
 import { configured } from './lib/supabase'
 import { HomePage } from './pages/HomePage'
 import { LoginPage } from './pages/LoginPage'
+import { ResetPasswordPage } from './pages/ResetPasswordPage'
 import './styles.css'
 
 const DashboardPage = lazy(() => import('./pages/DashboardPage').then(m => ({ default: m.DashboardPage })))
@@ -26,6 +27,7 @@ function App() {
   return <BrowserRouter><AuthProvider><Suspense fallback={<div className="center-state">Loading…</div>}><Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/login" element={<LoginPage />} />
+    <Route path="/reset-password" element={<ResetPasswordPage />} />
     <Route path="/dashboard" element={<Protected><DashboardPage /></Protected>} />
     <Route path="/surveys/new" element={<Protected><EditorPage /></Protected>} />
     <Route path="/surveys/:id/edit" element={<Protected><EditorPage /></Protected>} />
