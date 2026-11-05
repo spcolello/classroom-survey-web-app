@@ -2,6 +2,12 @@
 
 A full-stack classroom survey app built with React, TypeScript, Vite, Tailwind CSS, Supabase Auth/PostgreSQL, Recharts, and QR codes. One instructor creates surveys; students answer anonymously from a phone or laptop.
 
+**Live app:** https://classroom-survey-web-app.pages.dev/
+
+**Public sample survey:** https://classroom-survey-web-app.pages.dev/s/f8c3eb55f56d4dde9782f6a348bd6a97
+
+**Submission links and instructor testing:** [SUBMISSION.md](SUBMISSION.md)
+
 ## What it does
 
 - Instructor sign in, dashboard search and filters, draft editing, duplication, activation, closing, archiving, deleting, historical results, and CSV export.
@@ -78,3 +84,4 @@ npm run build
 - `specs`: unmodified assignment specifications, including the originally supplied TODO.
 - `TODO.md`: verified implementation status.
 - `DEVELOPMENT_SUMMARY.md`, `AI_DEVELOPMENT_HISTORY.md`, and `evidence/`: submission support.
+- `SUBMISSION.md`: paste-ready repository and deployment links plus private instructor access guidance.

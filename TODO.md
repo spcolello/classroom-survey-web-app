@@ -15,20 +15,27 @@ This replaces the supplied TODO's unverified checkmarks. The original is preserv
 - [x] Original specifications included; README, design decisions, and AI interaction summary added.
 - [x] `npm run test` and `npm run build` pass.
 
-## Requires live-service verification
+## Live-service verification
 
-- [ ] Create Supabase project and run migration.
-- [ ] Add instructor account to Supabase Auth and instructor allowlist.
-- [ ] Configure public project URL and publishable/anon key locally and in hosting.
-- [ ] Verify instructor login and all database writes in the live project.
-- [ ] Verify anonymous RLS access, result isolation, and duplicate protection with real browsers.
-- [ ] Verify the complete QR → submit → results workflow and refresh persistence.
-- [ ] Check responsive layout and keyboard access on desktop and mobile.
-- [ ] Open CSV in a spreadsheet application.
-- [ ] Push repository to GitHub and record the repository URL.
-- [ ] Deploy to public hosting and record the application URL.
-- [ ] Verify the production workflow from a separate device or browser.
-- [ ] Capture the four required database/application evidence screenshots without credentials.
+- [x] Create Supabase project and run migration; verify the five tables in Table Editor.
+- [x] Add instructor account to Supabase Auth and instructor allowlist.
+- [x] Configure public project URL and publishable key in ignored local environment file.
+- [x] Verify anonymous API cannot read responses/answers or directly insert surveys/responses.
+- [x] Verify anonymous submission RPC is callable and rejects an inactive survey.
+- [x] Push repository to GitHub and record the repository URL.
+- [x] Configure project URL and publishable key in Cloudflare Pages; set the Supabase Auth Site URL to the deployed site.
+- [x] Deploy to https://classroom-survey-web-app.pages.dev/ from the GitHub main branch.
+- [x] Sign in as the allowlisted instructor in production; create, save, reload, activate, duplicate, edit, close, and reactivate surveys.
+- [x] Verify the active survey and questions are publicly readable, while anonymous requests to `responses` and `answers` return HTTP 401.
+- [x] Scan the production QR code on a phone, submit anonymously, see confirmation, and see “Already submitted” on refresh.
+- [x] Verify the presentation count, instructor results, and PostgreSQL response/answer rows; refresh the app and see the same data.
+- [x] Send a second anonymous test response; a repeated token was rejected with HTTP 400. Results showed 2 responses and 50%/50% choices.
+- [x] Close the survey and verify the public link becomes unavailable; reactivate it and verify the link and prior results return.
+- [x] Export the results CSV and inspect its header and response row.
+- [x] Inspect desktop pages and complete the student flow on a phone.
+- [x] Capture the required Supabase and application evidence screenshots without passwords, project keys, or anonymous tokens.
+
+Keyboard-only navigation and opening the exported CSV in a separate spreadsheet application were not tested.
 
 ## Outside version 1
 
